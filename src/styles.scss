@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+
+  
+
+  signin-left-panel {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:50%;
+    color:white;
+    box-sizing:border-box;
+    font-family:open_sansregular;
+    font-size:40px;
+    text-align:center;
+    z-index:10;
+}
+
+
+.signin-overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    z-index:150;
+    overflow:hidden;
+    background:black;
+    display: none;
+}
