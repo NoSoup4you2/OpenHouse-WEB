@@ -1351,7 +1351,7 @@ font-size:14px;
 
 .leads-list-button {
 position:absolute;
-bottom:15px;
+bottom:5px;
 left:15px;
 z-index:100;
 width:30px;
@@ -2048,7 +2048,7 @@ vertical-align:top;
 }
 
 #editRegistrant_Form input[type="text"],#editRegistrant_Form input[type="email"],#editRegistrant_Form input[type="number"],
-#editRegistrant_Form input[type="tel"],
+#editRegistrant_Form input[type="tel"]
 {
 -webkit-appearance: none;
 width:100%;

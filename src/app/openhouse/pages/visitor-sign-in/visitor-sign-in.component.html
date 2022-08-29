@@ -1,16 +1,17 @@
-<div class="signin-overlay" style="display: block;">
-  <div class="signin-left-panel background-container"
-    style="background-image: url(https://rest.mobilerealtyapps.com/listing/image/api/145/l2x/369132/369132383-1.jpg)">
-    <div style="width:100%;height:100%;background-color:rgba(0,0,0,0.0);text-align:center;color:white">
+<div style="display: flex;">
+  <div class="signin-overlay" style="display: block; position: relative !important; width: 50% !important;">
+    <div class="signin-left-panel background-container" style="background-image: url(https://rest.mobilerealtyapps.com/listing/image/api/145/l2x/369132/369132383-1.jpg);">
+    </div>
+
+    <div style="width:100%;height:100%;background-color:rgba(0,0,0,0.0);text-align:center;color:white; bottom: 0; left: 0; right: 0; position: absolute;">
       <div
-        style="position:absolute;bottom:0;left:0;width:100%;height:60px;border-top:1px solid rgba(255,255,255,0.25);text-align:center;z-index:50;">
-        <img src="assets/images/close_white.png" height="30" style="margin-top:15px;" onclick="closeSignInForm()"
+        style="position:absolute;bottom:0;left:0;width:100%;height:40px;border-top:1px solid rgba(255,255,255,0.25);text-align:center;z-index:50;">
+        <img src="assets/images/close_white.png" height="30" style="margin-top:5px;" onclick="closeSignInForm()"
           class="btn"></div>
       <div
         style="position:absolute;top:0px;left:0px;width:100%;height:500px;text-align:left;background-image:url(assets/images/img_gradient_reverse.png);background-repeat:repeat-x;background-size:cover;">
       </div>
-      <div
-        style="background-image:url(assets/images/img_gradient.png);background-repeat:repeat-x;background-size:cover;height:600px;position:absolute;width:100%;bottom:0px;left:0px;z-index:10;text-align:left;">
+      <div style="background-image:url(assets/images/img_gradient.png);background-repeat:repeat-x;background-size:cover;height:600px;position:absolute;width:100%;bottom:0px;left:0px;z-index:10;text-align:left;">
         <div style="width:100%;position:absolute;bottom:60px;left:0px;box-sizing:border-box;padding:20px;">
           <div style="font-size:30px;color:white;margin-bottom:20px;" id="propertyTitle">1509 Avenida De Nogales</div>
           <div class="profile-image-container"
@@ -28,6 +29,16 @@
           </div>
         </div>
       </div>
+
+      <div class="leads-list-button" onclick="confirmShowRegistrants(curPID)"></div>
+
     </div>
-    <div class="leads-list-button" onclick="confirmShowRegistrants(curPID)"></div>
+
   </div>
+
+
+  <div style="width: 50%;">
+    the form here
+  </div>
+
+</div>
