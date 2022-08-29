@@ -1,0 +1,404 @@
+
+.signin-overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    z-index:150;
+    overflow:hidden;
+    background:black;
+    display: none;
+}
+
+.signin-left-panel {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:50%;
+    color:white;
+    box-sizing:border-box;
+    font-family:open_sansregular;
+    font-size:40px;
+    text-align:center;
+    z-index:10;
+}
+
+.signin-right-panel {
+    /* position:absolute; */
+    /* top:0; */
+    /* right:0; */
+    /* height:100%; */
+    /* width:50%; */
+    /* background-color:
+    white; */
+    /* box-sizing:
+    border-box; */
+    /* font-family:
+    open_sansregular; */
+    /* font-size:40px; */
+    /* text-align:
+    center; */
+    /* overflow:
+    hidden; */
+    /* padding:0px; */
+}
+
+.preview-badge {
+  position:absolute;
+	top:15px;
+	left:15px;
+	z-index:100;
+	width:200px;
+	height:30px;
+  line-height: 30px;
+  text-align: center;
+  color:white;
+  background-color: orange;
+  font-size:14px;
+}
+
+/***************************** IDC TESTIMONIAL INTEGRATION ****************************/
+
+.idc-container {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:50%;
+	overflow:hidden;
+	-webkit-transition:all 0.5s ease-in;
+	background:rgba(0,0,0,0.85);
+	z-index:9999;
+	display:none;
+
+}
+
+.idc-button {
+	display:none;
+	width:160px;
+	padding-left:10px;
+	padding-right:10px;
+	height:30px;
+	line-height:31px;
+	font-size:16px;
+	color:black;
+	border:1px solid white;
+	margin-top:10px;
+	background-color:white;
+	cursor:pointer;
+}
+
+.idc-profile-content {
+	width:350px;
+	height:130px;
+	margin-top:75px;
+	margin-left:auto;
+	margin-right:auto;
+	border-bottom:1px solid white;
+	color:white;
+
+}
+
+.idc-testimonials-title {
+	width:350px;
+	height:40px;
+	line-height:40px;
+	border-bottom:1px solid white;
+	font-size:20px;
+	margin-left:auto;
+	margin-right:auto;
+	color:white;
+
+}
+
+.idc-testimonials-content {
+	margin-top:15px;
+	width:350px;
+	height:calc(100% - 320px);
+	overflow:hidden;
+	margin-left:auto;
+	margin-right:auto;
+	color:white;
+	border-bottom:1px solid white;
+
+}
+
+.idc-testimonials-scroll {
+	width:350px;
+	height:calc(100% - 20px);
+	padding-right:45px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	-webkit-overflow-scrolling:touch;
+
+}
+
+.idc-testimonial-desc {
+	font-size:16px;
+	color:white;
+	margin-top:15px;
+}
+
+.idc-testimonial-title {
+	font-size:16px;
+	color:#eee;
+	margin-top:10px;
+	font-weight:bold;
+	padding-bottom:10px;
+	border-bottom:1px solid rgba(255,255,255,0.35);
+}
+
+/***************************** TESTIMONIAL TREE INTEGRATION ****************************/
+
+.tt-container {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:50%;
+	overflow:hidden;
+	-webkit-transition:all 0.5s ease-in;
+	background:rgba(0,0,0,0.85);
+	z-index:9999;
+	display:none;
+
+}
+
+
+
+.tt-profile-content {
+	width:350px;
+	height:130px;
+	margin-top:75px;
+	margin-left:auto;
+	margin-right:auto;
+	border-bottom:1px solid white;
+	color:white;
+
+}
+
+.tt-testimonials-title {
+	width:350px;
+	height:40px;
+	line-height:40px;
+	border-bottom:1px solid white;
+	font-size:20px;
+	margin-left:auto;
+	margin-right:auto;
+	color:white;
+
+}
+
+.tt-testimonials-content {
+	margin-top:15px;
+	width:350px;
+	height:calc(100% - 320px);
+	overflow:hidden;
+	margin-left:auto;
+	margin-right:auto;
+	color:white;
+	border-bottom:1px solid white;
+
+}
+
+.tt-testimonials-scroll {
+	width:350px;
+	height:calc(100% - 20px);
+	padding-right:45px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	-webkit-overflow-scrolling:touch;
+
+}
+
+.tt-testimonial-desc {
+	font-size:16px;
+	color:white;
+	margin-top:15px;
+}
+
+.tt-testimonial-title {
+	font-size:16px;
+	color:#eee;
+	margin-top:10px;
+	font-weight:bold;
+	padding-bottom:10px;
+	border-bottom:1px solid rgba(255,255,255,0.35);
+}
+
+
+/***************************** REAL SATISFIED INTEGRATION ****************************/
+
+.rs-container {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:50%;
+	overflow:hidden;
+	-webkit-transition:all 0.5s ease-in;
+	background:rgba(0,0,0,0.85);
+	z-index:9999;
+	display:none;
+
+}
+
+
+
+
+.rs-profile-content {
+	width:350px;
+	height:130px;
+	margin-top:75px;
+	margin-left:auto;
+	margin-right:auto;
+	border-bottom:1px solid white;
+	color:white;
+
+}
+
+.rs-rating-content {
+	width:350px;
+	height:90px;
+	margin-top:15px;
+	margin-left:auto;
+	margin-right:auto;
+	border-bottom:2px solid white;
+	color:white;
+
+}
+
+.rs-rating {
+	display:inline-block;
+	margin-right:15px;
+	height:100%;
+	color:white;
+	font-size:14px;
+}
+
+.rs-testimonials-title {
+	width:350px;
+	height:40px;
+	line-height:40px;
+	border-bottom:1px solid white;
+	font-size:20px;
+	margin-left:auto;
+	margin-right:auto;
+	color:white;
+
+}
+
+.rs-testimonials-content {
+	margin-top:15px;
+	width:350px;
+	height:calc(100% - 420px);
+	overflow:hidden;
+	margin-left:auto;
+	margin-right:auto;
+	color:white;
+
+}
+
+.rs-testimonials-scroll {
+	width:350px;
+	height:100%;
+	padding-right:45px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	-webkit-overflow-scrolling:touch;
+
+}
+
+.rs-testimonial-desc {
+	font-size:16px;
+	color:white;
+	margin-top:15px;
+}
+
+.rs-testimonial-title {
+	font-size:16px;
+	color:#eee;
+	margin-top:10px;
+	font-weight:bold;
+	padding-bottom:10px;
+	border-bottom:1px solid rgba(255,255,255,0.35);
+}
+
+
+/***************************** ZILLOW REVIEW INTEGRATION ****************************/
+
+.zillowreview-container {
+    position:absolute;
+    top:0px;
+    left:0px;
+    height:100%;
+    width:50%;
+    overflow:hidden;
+    -webkit-transition:all 0.5s ease-in;
+    background:rgba(0,0,0,0.85);
+    z-index:9999;
+    display:none;
+
+}
+
+
+
+.zillowreview-profile-content {
+    width:350px;
+    height:130px;
+    margin-top:75px;
+    margin-left:auto;
+    margin-right:auto;
+    border-bottom:1px solid white;
+    color:white;
+}
+
+.zillowreview-testimonials-title {
+    width:350px;
+    height:40px;
+    line-height:40px;
+    border-bottom:1px solid white;
+    font-size:20px;
+    margin-left:auto;
+    margin-right:auto;
+    color:white;
+
+}
+
+.zillowreview-testimonials-content {
+    margin-top:15px;
+    width:350px;
+    height:calc(100% - 320px);
+    overflow:hidden;
+    margin-left:auto;
+    margin-right:auto;
+    color:white;
+    border-bottom:1px solid white;
+}
+
+.zillowreview-testimonials-scroll {
+    width:350px;
+    height:calc(100% - 20px);
+    padding-right:45px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    -webkit-overflow-scrolling:touch;
+
+}
+
+.zillowreview-testimonial-desc {
+    font-size:16px;
+    color:white;
+    margin-top:15px;
+}
+
+.zillowreview-testimonial-title {
+    font-size:16px;
+    color:#eee;
+    margin-top:10px;
+    font-weight:bold;
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(255,255,255,0.35);
+}

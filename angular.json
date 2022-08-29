@@ -30,7 +30,7 @@
             "styles": [
               "src/styles.scss",
               "src/form.scss",
-              "src/assets/fonts.css"
+              "src/assets/fonts.scss"
             ],
             "scripts": []
           },

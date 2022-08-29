@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { VisitorSignInRoutingModule } from './visitor-sign-in-routing.module';
 import { VisitorSignInComponent } from './visitor-sign-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
+
 
 
 @NgModule({
@@ -13,7 +15,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     VisitorSignInRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatRadioModule
   ]
 })
-export class VisitorSignInModule { }
+export class VisitorSignInModule {
+
+  
+ }
