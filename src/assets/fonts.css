@@ -1,0 +1,381 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'open_sansbold';
+    
+    src: url('fonts/OpenSans-Bold-webfont.woff') format('woff'),
+       
+}
+
+@font-face {
+    font-family: 'open_sansbold_italic';
+    src:url('fonts/OpenSans-BoldItalic-webfont.woff') format('woff'),
+       
+}
+
+@font-face {
+    font-family: 'open_sansextrabold';
+    src: url('fonts/OpenSans-ExtraBold-webfont.woff') format('woff'),
+        
+}
+
+@font-face {
+    font-family: 'open_sansextrabold_italic';
+    src:  url('fonts/OpenSans-ExtraBoldItalic-webfont.woff') format('woff'),
+        
+}
+
+@font-face {
+    font-family: 'open_sansitalic';
+    src: url('fonts/OpenSans-Italic-webfont.woff') format('woff'),
+        
+}
+
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('fonts/OpenSans-Light-webfont.woff') format('woff'),
+
+
+}
+
+@font-face {
+    font-family: 'open_sanslight_italic';
+    src:  url('fonts/OpenSans-LightItalic-webfont.woff') format('woff'),
+        
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+  
+    src: url('fonts/OpenSans-Regular-webfont.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+
+}
+
+@font-face {
+    font-family: 'open_sanssemibold_italic';
+    src: url('fonts/OpenSans-SemiboldItalic-webfont.woff') format('woff'),
+        
+}
+
+
+
+
+
+
+@font-face {
+    font-family: 'effra_regular';
+    src: url('fonts/effra_std_lt-webfont.woff') format('woff'),
+         
+}
+
+@font-face {
+    font-family: 'effra_light';
+    src: url('fonts/effra_std_lt-webfont.woff') format('woff'),
+        
+}
+
+@font-face {
+    font-family: 'effra_medium';
+    src: url('fonts/effra_std_md-webfont.woff') format('woff'),
+        
+}
+
+@font-face {
+    font-family: 'effra_bold';
+    src:  url('fonts/effra_std_bd-webfont.woff') format('woff'),
+         
+}
+
+
+@font-face {
+	font-family: 'Interstate';
+	src: url('fonts/Interstate-Regular.woff') format('woff'),
+}
+
+@font-face {
+    font-family: 'SeroPro';
+    src: url('fonts/seropro.woff') format('woff'),
+      
+}
+
+@font-face {
+    font-family: 'SeroPro-Black';
+    src: url('fonts/seroproblack.woff') format('woff'),
+       
+}
+
+@font-face {
+    font-family: 'SeroPro-Bold';
+    src: url('fonts/seroprobold.woff') format('woff'),
+        
+}
+
+@font-face {
+    font-family: 'SeroPro-Extralight';
+    src: url('fonts/seroproextralight.woff') format('woff'),
+     
+}
+
+@font-face {
+    font-family: 'SeroPro-Extrathin';
+    src:  url('fonts/seroproextrathin.woff') format('woff'),
+      
+}
+
+@font-face {
+    font-family: 'SeroPro-Light';
+    src:  url('fonts/seroprolight.woff') format('woff'),
+        
+}
+
+@font-face {
+    font-family: 'SeroPro-Medium';
+    src: url('fonts/seropromedium.woff') format('woff'),
+       
+}
+
+@font-face {
+    font-family: 'SeroPro-Thin';
+    src: url('fonts/seroprothin.woff') format('woff'),
+        
+}
+
+@font-face {
+    font-family: 'SeroPro-ThinItalic';
+    src: url('fonts/seroprothinitalic.woff') format('woff'),
+       
+}
+
+
+
+@font-face {
+    font-family: 'w_sans_newbook';
+    src: url('fonts/wsansnew-book-webfont.woff') format('woff'),
+        
+
+}
+
+
+
+@font-face {
+    font-family: 'proxima_nova_regular';
+    src: url('fonts/proximanova-regular-webfont.woff') format('woff'),
+
+}
+
+@font-face {
+    font-family: 'proxima_nova_rgregular';
+    src: url('fonts/proximanova-regular-webfont.woff') format('woff'),
+     
+
+  }
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_light';  
+       src:  url('fonts/proximanova-light-webfont.woff') format('woff');
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_bold';
+    src: url('fonts/proximanova-bold-webfont.woff') format('woff'),
+
+}
+
+@font-face {
+	font-family: 'Baskerville';
+	src: url('fonts/Baskerville.woff') format('woff'),
+		
+}
+
+
+@font-face {
+    font-family: 'DINOT-Light';
+    src:  url('fonts/DINOT-Light.woff') format('woff'),
+     
+
+}
+
+@font-face {
+    font-family: 'DINOT-Bold';
+    src: url('fonts/DINOT-Bold.woff') format('woff'),
+ 
+}
+
+@font-face {
+    font-family: 'Requiem';
+    src:  url('fonts/RequiemDisplay-Roman.woff') format('woff'),
+        
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('fonts/avenirltstdroman.woff') format('woff'),
+        
+
+}
+
+@font-face {
+    font-family: 'Eurostyle';
+    src: url('fonts/EurostileLTStd.woff') format('woff'),
+        
+
+}
+
+@font-face {
+    font-family: 'ArialNarrow';
+    src: url('fonts/arialnarrow.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TungstenSemiBold';
+    src: url('fonts/tungsten-semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'MillerItalic';
+    src: url('fonts/miller-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Miller';
+    src: url('fonts/miller.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ScalaSans';
+    src: url('fonts/scala-sans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+.avenir {
+	font-family:Avenir;
+}
+
+.euro {
+	font-family:Eurostyle;
+}
+
+
+.brown {
+	color: rgb(106,98,90);
+}
+
+.champagne {
+	color:#2b2b2b;
+}
+
+.orange {
+	color: rgb(239,164,79);
+}
+
+.bold {
+	font-family: 'open_sanssemibold';
+}
+
+.small {
+  font-size:14px;
+}
+
+.medium {
+  font-size:16px;
+}
+
+.font-xsmall {
+    font-size:10px;
+}
+
+.font-small {
+    font-size:12px;
+}
+
+.font-regular {
+    font-size:14px;
+}
+
+.font-large {
+    font-size:18px;
+}
+
+.font-xlarge {
+    font-size:24px;
+}
+
+.font-xxlarge {
+    font-size:30px;
+}
+
+.regular {
+	font-family: effra_regular;
+}
+.bold {
+	font-family: effra_medium;
+}
+@media (min-width: 801px) {
+	.xxlarge {
+		font-size:50px;
+	}
+	.xlarge {
+		font-size:40px;
+	}
+	.large {
+		font-size:32px;
+	}
+	.medium {
+		font-size:24px;
+	}
+	.normal {
+		font-size:18px;
+	}
+	.small {
+		font-size:14px;
+	}
+}
+	@media (max-width: 800px) {
+	.xxlarge {
+		font-size:32px;
+	}
+	.xlarge {
+		font-size:26px;
+	}
+	.large {
+		font-size:20px;
+	}
+	.medium {
+		font-size:18px;
+	}
+	.normal {
+		font-size:16px;
+	}
+	.small {
+		font-size:12px;
+	}
+}
