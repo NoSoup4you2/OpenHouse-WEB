@@ -146,7 +146,7 @@
 
 
 @keyframes mymove {
-  0% {transform: translateX(0) !important;}
-  50% {transform: translateX(-300px);}
-  100% {transform: translateX(0) !important;}
+  0% {background-position: left center;}
+	50% {background-position: right center;}
+	100% {background-position: left center;}
 }

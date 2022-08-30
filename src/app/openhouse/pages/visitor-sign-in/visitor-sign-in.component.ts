@@ -42,7 +42,7 @@ export class VisitorSignInComponent implements OnInit {
       //the logic of the signin (call to backend API)
     }
 
-    regForProperty(event: any){
+    regForProperty(event?: any){
       console.log('This is a submit Request')
       console.log(event);
     }
@@ -57,4 +57,20 @@ export class VisitorSignInComponent implements OnInit {
       this.showAgentQuestion = false;
     }
 
+    mcAnswerChanged(event: any) {
+      console.log(event);
+    }
+    openURL(url: string){
+      console.log('Open Web Page : ' + url)
+    }
+
+    confirmShowRegistrants(a? : any) {}
+
+    showTTPanel() {}
+
+    showZillowReviewPanel(){}
+
+    showRSPanel() {}
+
+    closeSignInForm(){}
 }
