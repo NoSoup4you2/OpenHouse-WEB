@@ -1,9 +1,12 @@
 <div style="display: flex;">
   <div class="signin-overlay" style="display: block; position: relative !important; width: 50% !important;">
-    <div class="signin-left-panel background-container" style="background-image: url(https://rest.mobilerealtyapps.com/listing/image/api/145/l2x/369132/369132383-1.jpg);">
+    <!-- Beginning of Left Pannel -->
+    <div class="signin-left-panel background-container"
+      style="background-image: url(https://rest.mobilerealtyapps.com/listing/image/api/145/l2x/369132/369132383-1.jpg);">
     </div>
 
-    <div style="width:100%;height:100%;background-color:rgba(0,0,0,0.0);text-align:center;color:white; bottom: 0; left: 0; right: 0; position: absolute;">
+    <div
+      style="width:100%;height:100%;background-color:rgba(0,0,0,0.0);text-align:center;color:white; bottom: 0; left: 0; right: 0; position: absolute;">
       <div
         style="position:absolute;bottom:0;left:0;width:100%;height:40px;border-top:1px solid rgba(255,255,255,0.25);text-align:center;z-index:50;">
         <img src="assets/images/close_white.png" height="30" style="margin-top:5px;" (click)="closeSignInForm()"
@@ -11,7 +14,8 @@
       <div
         style="position:absolute;top:0px;left:0px;width:100%;height:500px;text-align:left;background-image:url(assets/images/img_gradient_reverse.png);background-repeat:repeat-x;background-size:cover;">
       </div>
-      <div style="background-image:url(assets/images/img_gradient.png);background-repeat:repeat-x;background-size:cover;height:600px;position:absolute;width:100%;bottom:0px;left:0px;z-index:10;text-align:left;">
+      <div
+        style="background-image:url(assets/images/img_gradient.png);background-repeat:repeat-x;background-size:cover;height:600px;position:absolute;width:100%;bottom:0px;left:0px;z-index:10;text-align:left;">
         <div style="width:100%;position:absolute;bottom:60px;left:0px;box-sizing:border-box;padding:20px;">
           <div style="font-size:30px;color:white;margin-bottom:20px;" id="propertyTitle">1509 Avenida De Nogales</div>
           <div class="profile-image-container"
@@ -22,7 +26,7 @@
             <span style="font-size:20px;color:white;">Hosted By:<br><span class="profile-fname">First </span> <span
                 class="profile-lname">Last</span> <span class="profile-host"></span></span><br><span
               class="profile-title" style="font-size:18px;">Sample Title</span><br>
-            <div class="rs-button pulse-5s" (click)="showRSPanel()">View My Testimonials</div>
+            <!-- <div class="rs-button pulse-5s" (click)="showRSPanel()">View My Testimonials</div> -->
             <div class="zillowreview-button pulse-5s" (click)="showZillowReviewPanel()" style="display: none;">View My
               Reviews</div>
             <div class="tt-button pulse-5s" (click)="showTTPanel()" style="display: none;">View My Testimonials</div>
@@ -35,263 +39,377 @@
     </div>
 
   </div>
+  <!-- End of Left Pannel -->
 
+  <!-- Beginning of Right Pannel -->
 
   <div class="signin-right-panel" style="color:black;overflow:hidden;background:white;">
-    <form id="propertyReg_Form" autocomplete="off" style="font-size: 16px;">
+    <form [formGroup]="signinForm" id="propertyReg_Form" autocomplete="off" style="font-size: 16px;">
 
       <div class="form-title-section">
         <span class="signin-title" style="font-family: proxima_nova_light; color: rgb(43, 43, 43);">PLEASE SIGN IN <span
-            class="cn" style="display: none;">/ 请登录​</span></span>
-        <input type="button" value="SUBMIT" class="signin-button pulse-5s" (click)="regForProperty()"
+            class="cn" style="display: none;">​</span></span>
+        <input type="button" value="SUBMIT" class="signin-button pulse-5s" (click)="regForProperty(signinForm)"
           style="font-family: proxima_nova_light; background-color: rgb(43, 43, 43);">
       </div>
+
       <div id="reg-form-scroll" class="signin-form-content">
         <input type="hidden" name="fn" value="addRegularRegistrant">
-        <input type="hidden" name="propertyID" value="630628">
+        <input type="hidden" name="propertyID" value="630628" formControlName="propertyID">
         <input type="hidden" name="pid" value="63028ca059e220348071ab48">
         <input type="hidden" name="isBroker" value="NO">
-        <input type="hidden" name="leadType" value="oh">
+       
 
+        <!-- First Name Input -->
         <div class="visitor-info-input-row">
-          <div class="input-label">NAME <span class="cn" style="display: none;"></span></div>
-          <input type="text" name="name" value="" id="reg-name" placeholder="Full Name"
+          <div class="input-label">FIRST NAME</div>
+          <input type="text" name="name" value="" placeholder="First Name" formControlName="firstname" style="text-transform: capitalize;">
+        </div>
+         <!-- Last Name Input -->
+         <div class="visitor-info-input-row">
+          <div class="input-label">LAST NAME <span class="cn" style="display: none;"></span></div>
+          <input type="text" name="name" value="" id="reg-name" placeholder="Last Name" formControlName="lastname"
             style="text-transform: capitalize;">
         </div>
+        <!-- Email Address Input -->
         <div class="visitor-info-input-row">
           <div class="input-label">EMAIL <span class="cn" style="display: none;">​</span><span class="email-mandatory"
               style="display: none;"> *</span></div>
-          <input type="email" name="email" value="" id="reg-email" placeholder="Email">
+          <input type="email" name="email" value="" id="reg-email" placeholder="Email" formControlName="email">
         </div>
+        <!-- Phone Number Input -->
         <div class="visitor-info-input-row">
           <div class="input-label">PHONE <span class="cn" style="display: none;"></span><span class="phone-mandatory"
               style="display: none;"> *</span></div>
-          <input type="tel" name="phone" value="" id="reg-phone" placeholder="Phone">
-
-        </div>
-        <div class="visitor-info-input-row brokers-signin" style="display: none;">
-          <div class="input-label">COMPANY <span class="cn" style="display: none;"></span></div>
-          <input type="text" name="company" value="" id="reg-company" placeholder="Company">
+          <input type="tel" name="phone" value="" id="reg-phone" placeholder="Phone" formControlName="phone">
         </div>
 
+        <!-- Beginning of Quesition -->
         <div class="form-questions">
+           <!-- Beginning of Agent Question -->
           <div class="form-question-row eq1-master">
-            <div class="question">Are you working with an agent?<span class="cn" id="cn-0" style="display: none;"> /
-                您有否地产经纪代理?</span></div>
+            <div class="question">Are you working with an agent?<span class="cn" id="cn-0" style="display: none;"></span></div>
             <div class="half-width-checkboxes">
-              <div class="checkbox"><input id="question-0-yes" type="radio" value="YES" name="question-0"><label
-                  for="question-0-yes" (click)="showEQ(1)">Yes <span class="cn" style="display: none;"> /
-                    是</span></label></div>
-              <div class="checkbox"><input id="question-0-no" type="radio" value="NO" name="question-0"><label
-                  for="question-0-no" (click)="hideEQ(1)">No <span class="cn" style="display: none;">/ 否</span></label>
+              <div class="checkbox"><input id="question-0-yes" type="radio" value="YES" name="workingAgentYN" formControlName="workingAgentYN">
+                <label for="question-0-yes" (click)="showAgentInfo(true)">Yes </label>
+              </div>
+              <div class="checkbox"><input id="question-0-no" type="radio" value="NO" name="workingAgentYN" formControlName="workingAgentYN">
+                <label for="question-0-no" (click)="showAgentInfo(false)">No </label>
               </div>
             </div>
           </div>
-          <div class="form-question-row eq1-slave" style="display: none;">
-            <div class="question">Agent Name?<span class="cn" style="display: none;"><br>地产经纪名字?</span></div><input
+
+          <!-- Beginning of conditianal Agent Detail Question -->
+          <div *ngIf="showAgentQuestion">
+          <div class="form-question-row eq1-slave" >
+            <div class="question">Agent Name?<span class="cn" style="display: none;"><br></span></div><input
               name="question-0a" type="text" value="" placeholder="Agent Name" autocapitalize="word"
-              style="text-transform: capitalize;">
+              style="text-transform: capitalize;" formControlName="workingAgentName">
           </div>
-          <div class="form-question-row eq1-slave" style="display: none;">
-            <div class="question">Agent Contact?<span class="cn" style="display: none;"><br>地产经纪电子邮件?</span></div><input
-              name="question-0b" type="text" value="" placeholder="Agent Email or Phone">
+          <div class="form-question-row eq1-slave" >
+            <div class="question">Agent Contact Email<span class="cn" style="display: none;"><br></span></div><input
+              name="question-0b" type="text" value="" placeholder="Agent Email Address" formControlName="workingAgentEmail">
           </div>
-          <div class="form-question-row eq1-slave" style="display: none;">
-            <div class="question">Agent Company?<span class="cn" style="display: none;"><br>地产经纪公司?</span></div><input
-              name="question-0c" type="text" value="" placeholder="Agent Company" style="text-transform: capitalize;">
+          <div class="form-question-row eq1-slave" >
+            <div class="question">Agent Contact Email<span class="cn" style="display: none;"><br></span></div><input
+              name="question-0b" type="text" value="" placeholder="Agent Phone Number" formControlName="workingAgentPhone">
           </div>
+          <div class="form-question-row eq1-slave" >
+            <div class="question">Agent Company?<span class="cn" style="display: none;"><br></span></div><input
+              name="question-0c" type="text" value="" placeholder="Agent Company" style="text-transform: capitalize;" formControlName="workingAgentCompany">
+          </div>
+          <!-- Exclusive Buyer Agent Agreement -->
           <div class="form-question-row">
-            <div class="question">Do you currently rent or own?<span class="cn" id="cn-1" style="display: none;"> /
-                您現在住的是?</span></div>
-            <div class="full-width-checkboxes" id="answers-section-1">
-              <div class="checkbox"><input type="radio" value="Own" name="question-1" id="question-1-0"
-                  (click)="mcAnswerChanged('1')"><label for="question-1-0">Own <span class="cn" style="display: none;">/
-                    undefined</span></label></div>
-              <div class="checkbox"><input type="radio" value="Rent" name="question-1" id="question-1-1"
-                  (click)="mcAnswerChanged('1')"><label for="question-1-1">Rent <span class="cn"
-                    style="display: none;">/ undefined</span></label></div>
+            <div class="question">Do you have an exclusive buyer’s agent agreement?<span class="cn" id="cn-4" style="display: none;"></span></div>
+              <div class="half-width-checkboxes">
+                <div class="checkbox">
+                  <input id="question-4-yes" type="radio" value="YES" name="question-4">
+                  <label for="question-4-yes">Yes <span class="cn" style="display: none;"></span></label></div>
+                <div class="checkbox">
+                  <input id="question-4-no" type="radio" value="NO" name="question-4">
+                  <label for="question-4-no">No <span class="cn" style="display: none;"></span></label></div>
+              </div>
             </div>
-          </div>
-          <div class="form-question-row">
-            <div class="question">Are you looking to buy or sell?<span class="cn" id="cn-2" style="display: none;"> /
-                您是否考慮買賣房屋?</span></div>
-            <div class="full-width-checkboxes" id="answers-section-2">
-              <div class="checkbox"><input type="radio" value="Sell" name="question-2" id="question-2-0"
-                  (click)="mcAnswerChanged('2')"><label for="question-2-0">Sell <span class="cn"
-                    style="display: none;">/ undefined</span></label></div>
-              <div class="checkbox"><input type="radio" value="Buy" name="question-2" id="question-2-1"
-                  (click)="mcAnswerChanged('2')"><label for="question-2-1">Buy <span class="cn" style="display: none;">/
-                    undefined</span></label></div>
-            </div>
-          </div>
-          <div class="form-question-row">
-            <div class="question">How did you hear about this open house?<span class="cn" id="cn-3"
-                style="display: none;"> / 您是如何听说到我们的</span></div>
-            <div class="full-width-checkboxes" id="answers-section-3">
-              <div class="checkbox"><input type="radio" value="Zillow" name="question-3" id="question-3-0"
-                  (click)="mcAnswerChanged('3')"><label for="question-3-0">Zillow <span class="cn"
-                    style="display: none;">/ undefined</span></label></div>
-              <div class="checkbox"><input type="radio" value="Trulia" name="question-3" id="question-3-1"
-                  (click)="mcAnswerChanged('3')"><label for="question-3-1">Trulia <span class="cn"
-                    style="display: none;">/ undefined</span></label></div>
-              <div class="checkbox"><input type="radio" value="Social Media" name="question-3" id="question-3-2"
-                  (click)="mcAnswerChanged('3')"><label for="question-3-2">Social Media <span class="cn"
-                    style="display: none;">/ undefined</span></label></div>
-              <div class="checkbox"><input type="radio" value="Signage" name="question-3" id="question-3-3"
-                  (click)="mcAnswerChanged('3')"><label for="question-3-3">Signage <span class="cn"
-                    style="display: none;">/ undefined</span></label></div>
-              <div class="checkbox"><input type="radio" value="Neighbors" name="question-3" id="question-3-4"
-                  (click)="mcAnswerChanged('3')"><label for="question-3-4">Neighbors <span class="cn"
-                    style="display: none;">/ undefined</span></label></div>
-              <div class="checkbox"><input type="radio" value="Other" name="question-3" id="question-3-5"
-                  (click)="mcAnswerChanged('3')"><label for="question-3-5">Other <span class="cn"
-                    style="display: none;">/ undefined</span></label></div><input type="text" value=""
-                name="question-3-other" id="question-3-5-other" placeholder="Please specify.">
-            </div>
-          </div>
-          <div class="form-question-row">
-            <div class="question">How did you hear about this open house?<span class="cn" id="cn-4"
-                style="display: none;"> / 您是如何听说到我们的</span></div><input name="question-4" type="text" value=""
-              placeholder="Answer">
-          </div>
-          <div class="form-question-row">
-            <div class="question">Cash or Financing?<span class="cn" id="cn-5" style="display: none;"> /
-                您准备用现金购买还是贷款?</span></div>
-            <div class="full-width-checkboxes" id="answers-section-5">
-              <div class="checkbox"><input type="radio" value="Cash" name="question-5" id="question-5-0"
-                  (click)="mcAnswerChanged('5')"><label for="question-5-0">Cash <span class="cn"
-                    style="display: none;">/ undefined</span></label></div>
-              <div class="checkbox"><input type="radio" value="Financing" name="question-5" id="question-5-1"
-                  (click)="mcAnswerChanged('5')"><label for="question-5-1">Financing <span class="cn"
-                    style="display: none;">/ undefined</span></label></div>
-            </div>
+        </div>
+         <!-- End of conditianal Agent Detail Question -->
+        <!-- End of conditianal Agent  Question -->
+
+        <div class="form-question-row">
+          <div class="question">Are you looking to buy or sell?<span class="cn" id="cn-2" style="display: none;"></span></div>
+          <div class="half-width-checkboxes" id="answers-section-2">
+            <div class="checkbox"><input type="checkbox" value="Sell" name="seller" id="question-2-0" formControlName="seller"
+                ><label for="question-2-0">Sell <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox"><input type="checkbox" value="Buy" name="buyer" id="question-2-1" formControlName="buyer"
+                ><label for="question-2-1">Buy <span class="cn" style="display: none;" formControlName="seller"></span></label></div>
           </div>
         </div>
 
-        <div class="extra-permission-row" style="display:none;">
-          <div class="form-question-row">
-            <input type="checkbox" value="YES" name="realscout" id="realscout-yes" unchecked=""><label
-              for="realscout-yes" style="font-family:open_sanssemibold;color:black;">Send me more information on similar
-              properties.</label>
-          </div>
-        </div>
-        <div class="cloudcma extra-permission-row" style="display: none;">
-          <div class="form-question-row">
-            <input type="checkbox" value="YES" name="cloudcma" id="cloudcma-yes" unchecked=""><label for="cloudcma-yes"
-              style="font-family:open_sanssemibold;color:black;">Send me a Property Report of this open house to get
-              more information on this listing.</label>
-          </div>
-
-        </div>
-        <div class="moxipresent extra-permission-row" style="display: none;">
-          <div class="form-question-row">
-            <input type="checkbox" value="YES" name="moxipresent" id="moxipresent-yes" unchecked=""><label
-              for="moxipresent-yes" style="font-family:open_sanssemibold;color:black;">Send me a digital presentation of
-              this open house to get more information on this listing.</label>
-          </div>
-        </div>
-        <div class="touchcma extra-permission-row" style="display: none;">
-          <div class="form-question-row">
-            <input type="checkbox" value="YES" name="touchcma" id="touchcma-yes" unchecked=""><label for="touchcma-yes"
-              style="font-family:open_sanssemibold;color:black;">Send me a digital presentation of this open house to
-              get more information on this listing.</label>
+        <!-- Beginning of Rent or Own -->
+        <div class="form-question-row">
+          <div class="question">Do you currently rent or own?<span class="cn" id="cn-1" style="display: none;"></span></div>
+          <div class="half-width-checkboxes" id="answers-section-1">
+            <div class="checkbox"><input type="radio" value="Own" name="rentorown" id="question-1-0" formControlName="rentorown"
+              ><label for="question-1-0">Own <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox"><input type="radio" value="Rent" name="rentorown" id="question-1-1" formControlName="rentorown"
+                ><label for="question-1-1">Rent <span class="cn" style="display: none;"></span></label></div>
           </div>
         </div>
 
-        <div class="homekeepr extra-permission-row" style="display: none;">
-          <div class="form-question-row">
-            <input type="checkbox" value="YES" name="homekeepr" id="homekeepr-yes" unchecked=""><label
-              for="homekeepr-yes" style="font-family:open_sanssemibold;color:black;">Send me a free home maintenance app
-              with a list of your favorite local home service pros.</label>
+        <!-- BEGINNING OF HOW DID YOU HEAR ABOUT OPEN HOUSE -->
+        <div class="form-question-row">
+          <div class="question">How did you hear about this open house?<span class="cn" id="cn-3" style="display: none;">
+            </span></div>
+          <div class="full-width-checkboxes" id="answers-section-3">
+            <div class="checkbox">
+              <input type="radio" value="Zillow" name="foundvia" id="question-3-0" formControlName="foundvia" (click)="mcAnswerChanged(false)">
+                <label for="question-3-0">Zillow </label>
+              </div>
+                <div class="checkbox"><input type="radio" value="Realtor.com" name="foundvia" id="question-3-1" formControlName="foundvia"
+                  (click)="mcAnswerChanged(false)"><label for="question-3-1">Realtor.com <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox"><input type="radio" value="Trulia" name="foundvia" id="question-3-2" formControlName="foundvia"
+                (click)="mcAnswerChanged(false)"><label for="question-3-2">Trulia <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox"><input type="radio" value="Social Media" name="foundvia" id="question-3-3" formControlName="foundvia"
+                (click)="mcAnswerChanged(false)"><label for="question-3-3">Social Media <span class="cn"
+                  style="display: none;"></span></label></div>
+            <div class="checkbox"><input type="radio" value="Signage" name="foundvia" id="question-3-4" formControlName="foundvia"
+                (click)="mcAnswerChanged(false)"><label for="question-3-4">Signage <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox"><input type="radio" value="Neighbors" name="foundvia" id="question-3-5" formControlName="foundvia"
+                (click)="mcAnswerChanged(false)"><label for="question-3-5">Neighbors </label></div>
+            <div class="checkbox"><input type="radio" value="Other" name="foundvia" id="question-3-6" formControlName="foundvia"
+                (click)="mcAnswerChanged(true)"><label for="question-3-6">Other </label></div>
+                <input *ngIf="showFoundHowQuestion" style="display: block;" type="text" value="" name="question-3-other" id="question-3-5-other" placeholder="Please specify." formControlName="foundviatext">
           </div>
         </div>
 
+   
       </div>
+
+      <div class="form-question-row">
+        <div class="question">Cash or Financing?<span class="cn" id="cn-5" style="display: none;"></span></div>
+        <div class="half-width-checkboxes"  id="answers-section-5">
+          <div class="checkbox"><input type="radio" value="Cash" name="cashorfinance" id="question-5-0" formControlName="cashorfinance"
+              ><label for="question-5-0">Cash </label></div>
+          <div class="checkbox"><input type="radio" value="Financing" name="cashorfinance" id="question-5-1" formControlName="cashorfinance">
+              <label for="question-5-1">Financing </label></div>
+        </div>
+      </div>
+
+
+             <!-- Beginning of Preaproved-->
+             <div class="form-question-row">
+              <div class="question">Are you mortgage pre-approved?<span class="cn" id="cn-1" style="display: none;"></span></div>
+              <div class="half-width-checkboxes" id="answers-section-8">
+                <div class="checkbox"><input type="radio" value=true name="preaproved"  id="question-8-0" formControlName="preaproved" (click)="ppAnswerChanged(true)">
+                  <label for="question-8-0">Yes </label></div>
+                <div class="checkbox"><input type="radio" value=false name="preaproved"  id="question-8-1" formControlName="preaproved" (click)="ppAnswerChanged(false)">
+                    <label for="question-8-1">No </label></div>
+                    <input *ngIf="showpreaproved" type="text" value="" name="question-8-other" id="question-8-5-other" placeholder="Please specify." formControlName="preaprovedamount">
+              </div>
+              <input *ngIf="showpreaproved" type="text" value="" name="question-8-other" id="question-8-5-other" placeholder="Please specify." formControlName="preaprovedamount">
+              
+              <!-- TODO: Fix the position and hidding of the Approved Amount -->
+
+            </div>
+            <!-- Time Frame Question -->
+            <div class="form-question-row">
+              <div class="question">When are you looking to move ?<span class="cn" id="cn-1" style="display: none;"></span></div>
+              <div class="full-width-checkboxes" id="answers-section-1">
+                <div class="checkbox"><input type="radio" value="3 months" name="movetimeframe" id="movetimeframe-9-0" formControlName="movetimeframe" (click)="showMoveChanged(false)">
+                  <label for="movetimeframe-9-0">3 months <span class="cn" style="display: none;"></span></label></div>
+                <div class="checkbox"><input type="radio" value="3-6 months" name="movetimeframe" id="movetimeframe-9-1" formControlName="movetimeframe" (click)="showMoveChanged(false)">
+                  <label for="movetimeframe-9-1">3-6 months <span class="cn" style="display: none;"></span></label></div>
+                <div class="checkbox"><input type="radio" value="6-12 months" name="movetimeframe" id="movetimeframe-9-2" formControlName="movetimeframe" (click)="showMoveChanged(false)">
+                  <label for="movetimeframe-9-2">6-12 months <span class="cn" style="display: none;"></span></label></div>
+                <div class="checkbox"><input type="radio" value="Other" name="movetimeframe" id="movetimeframe-9-3" formControlName="movetimeframe" (click)="showMoveChanged(true)">
+                  <label for="movetimeframe-9-3">Other <span class="cn" style="display: block;"></span></label></div>
+                  <input *ngIf="showmoveother" style="display: block;" type="text" value="" name="movetimeframe-1-other" id="movetimeframe-9-3-other" placeholder="Please specify." formControlName="movetimeother">
+                </div>
+              </div>
+      
+              
+              <!-- Point In Buying Process -->
+
+              <div class="form-question-row">
+                <div class="question">At what point in the buying process are you?<span class="cn" id="cn-1" style="display: none;"></span></div>
+                <div class="full-width-checkboxes">
+                  <div class="checkbox"><input type="radio" value="Seeing what's out there" name="transmotivations"  id="transmotivations-8-0" formControlName="transmotivations" >
+                    <label for="transmotivations-8-0">Seeing what's out there  </label></div>
+                  <div class="checkbox"><input type="radio" value="Actively looking"name="transmotivations"  id="transmotivations-8-1" formControlName="transmotivations" >
+                      <label for="transmotivations-8-1">Actively looking </label></div>
+                      <div class="checkbox"><input type="radio" value="I'm ready" name="transmotivations"  id="transmotivations-8-3" formControlName="transmotivations" >
+                        <label for="transmotivations-8-3">I'm ready </label></div>
+                  </div>
+              </div>
+            
+              <!-- Live-in or Investment -->
+              <div class="form-question-row">
+                <div class="question">Are you looking for a live-in or investment property?<span class="cn" id="cn-0" style="display: none;"></span></div>
+              <div class="half-width-checkboxes" id="answers-section-0">
+                <div class="checkbox"><input type="radio" value="Investment" name="question-0" id="question-0-0" >
+                  <label for="question-0-0">Investment <span class="cn" style="display: none;">/ undefined</span></label></div>
+                <div class="checkbox"><input type="radio" value="Live-in" name="question-0" id="question-0-1" >
+                  <label for="question-0-1">Live-in <span class="cn" style="display: none;">/ undefined</span></label></div>
+                </div>
+              </div>
+          
+
+         
+
+        <!-- Sell Before Purchase -->
+        <div class="form-question-row">
+          <div class="question">Do you have to sell your home before purchasing a new home?<span class="cn" id="cn-0" style="display: none;"></span></div>
+            <div class="half-width-checkboxes" id="sellbefore-section-0">
+            <div class="checkbox"><input id="sellbefore-0-yes" type="radio" value="YES" name="sellbefore">
+              <label for="sellbefore-0-yes">Yes <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox"><input id="sellbefore-0-no" type="radio" value="NO" name="sellbefore">
+              <label for="sellbefore-0-no">No <span class="cn" style="display: none;"></span></label></div>
+          </div>
+        </div>
+
+        <!-- Contacted Similar Properties -->
+        <div class="form-question-row">
+          <div class="question">Would you like to be contacted with similar properties?<span class="cn" id="cn-1" style="display: none;"></span></div>
+            <div class="half-width-checkboxes">
+              <div class="checkbox"><input id="question-1-yes" type="radio" value="YES" name="question-1">
+              <label for="question-1-yes">Yes <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox"><input id="question-1-no" type="radio" value="NO" name="question-1">
+              <label for="question-1-no">No <span class="cn" style="display: none;"></span></label></div>
+          </div>
+        </div>
+
+        <!-- Placed on Mailing listing -->
+        <div class="form-question-row">
+          <div class="question">Please add me to your mailing list.<span class="cn" id="cn-2" style="display: none;"></span></div>
+            <div class="half-width-checkboxes">
+              <div class="checkbox"><input id="question-2-yes" type="radio" value="YES" name="question-2">
+                <label for="question-2-yes">Yes <span class="cn" style="display: none;"></span></label></div>
+              <div class="checkbox"><input id="question-2-no" type="radio" value="NO" name="question-2">
+                <label for="question-2-no">No <span class="cn" style="display: none;"> </span></label></div>
+          </div>
+        </div>
+
+        <!-- Pets Yes NO -->
+        <div class="form-question-row">
+          <div class="question">Do you have pets?<span class="cn" id="cn-3" style="display: none;"></span></div>
+          <div class="half-width-checkboxes">
+            <div class="checkbox"><input id="question-3-yes" type="radio" value="YES" name="question-3">
+              <label for="question-3-yes">Yes <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox"><input id="question-3-no" type="radio" value="NO" name="question-3">
+              <label for="question-3-no">No <span class="cn" style="display: none;"></span></label></div>
+          </div>
+        </div>
+
+        <!-- Whne looking to move ? -->
+        <div class="form-question-row">
+          <div class="question">When are you looking to move?<span class="cn" id="cn-4" style="display: none;"></span></div>
+            <div class="full-width-checkboxes" id="answers-section-4">
+              <div class="checkbox">
+                <input type="radio" value="Immediately" name="question-4" id="question-4-0" onclick="mcAnswerChanged('4')">
+                <label for="question-4-0">Immediately <span class="cn" style="display: none;"></span></label></div>
+              <div class="checkbox">
+                <input type="radio" value="Next 2 Weeks" name="question-4" id="question-4-1" onclick="mcAnswerChanged('4')">
+                <label for="question-4-1">Next 2 Weeks <span class="cn" style="display: none;"></span></label></div>
+              <div class="checkbox">
+                  <input type="radio" value="Next 30 Days" name="question-4" id="question-4-2" onclick="mcAnswerChanged('4')">
+                  <label for="question-4-2">Next 30 Days <span class="cn" style="display: none;"></span></label></div>
+              <div class="checkbox">
+                  <input type="radio" value="Other" name="question-4" id="question-4-3" onclick="mcAnswerChanged('4')">
+                  <label for="question-4-3">Other <span class="cn" style="display: none;"></span></label></div>
+                  <input type="text" value="" name="question-4-other" style="display: block;" id="question-4-3-other" placeholder="Please specify.">
+            </div>
+        </div>
+
+        <!-- Rent Budget -->
+        <div class="form-question-row">
+          <div class="question">What kind of budget are you working with?<span class="cn" id="cn-5" style="display: none;"></span></div>
+            <div class="full-width-checkboxes" id="answers-section-5">
+              <div class="checkbox">
+                <input type="radio" value="Below $2,000" name="question-5" id="question-5-0" onclick="mcAnswerChanged('5')">
+                <label for="question-5-0">Below $2,000 <span class="cn" style="display: none;"></span></label></div>
+              <div class="checkbox">
+                <input type="radio" value="$2000 - 3000" name="question-5" id="question-5-1" onclick="mcAnswerChanged('5')">
+                <label for="question-5-1">$2000 - 3000 <span class="cn" style="display: none;"></span></label></div>
+              <div class="checkbox">
+                <input type="radio" value="$3000 - 4000" name="question-5" id="question-5-2" onclick="mcAnswerChanged('5')">
+                <label for="question-5-2">$3000 - 4000 <span class="cn" style="display: none;"></span></label></div>
+              <div class="checkbox">
+                <input type="radio" value="$4000 - 5000" name="question-5" id="question-5-3" onclick="mcAnswerChanged('5')">
+                <label for="question-5-3">$4000 - 5000 <span class="cn" style="display: none;"></span></label></div>
+              <div class="checkbox">
+                <input type="radio" value="Other" name="question-5" id="question-5-4" onclick="mcAnswerChanged('5')">
+                <label for="question-5-4">Other <span class="cn" style="display: none;"></span></label></div>
+                <input type="text" value="" name="question-5-other" style="display: block;" id="question-5-4-other" placeholder="Please specify.">
+            </div>
+        </div>
+
+        <!-- How Well Priced is the Property -->
+        <div class="form-question-row">
+          <div class="question">How well priced is this property?<span class="cn" id="cn-2" style="display: none;"></span></div>
+          <div class="full-width-checkboxes" id="answers-section-2">
+            <div class="checkbox">
+              <input type="radio" value="Overpriced" name="question-2" id="question-2-0" onclick="mcAnswerChanged('2')">
+              <label for="question-2-0">Overpriced <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox">
+              <input type="radio" value="Just Right" name="question-2" id="question-2-1" onclick="mcAnswerChanged('2')">
+              <label for="question-2-1">Just Right <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox">
+              <input type="radio" value="Underpriced" name="question-2" id="question-2-2" onclick="mcAnswerChanged('2')">
+              <label for="question-2-2">Underpriced <span class="cn" style="display: none;"></span></label></div>
+          </div>
+        </div>
+
+        <!-- Why are you looking to move -->
+        <div class="form-question-row">
+          <div class="question">Why are you looking to move?<span class="cn" id="cn-3" style="display: none;"></span></div>
+          <div class="full-width-checkboxes" id="answers-section-3">
+            <div class="checkbox">
+              <input type="radio" value="Relocating" name="question-3" id="question-3-0" onclick="mcAnswerChanged('3')">
+              <label for="question-3-0">Relocating <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox">
+              <input type="radio" value="Need more space" name="question-3" id="question-3-1" onclick="mcAnswerChanged('3')">
+              <label for="question-3-1">Need more space <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox">
+              <input type="radio" value="My lease is expiring" name="question-3" id="question-3-2" onclick="mcAnswerChanged('3')">
+              <label for="question-3-2">My lease is expiring <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox">
+              <input type="radio" value="I'm just looking" name="question-3" id="question-3-3" onclick="mcAnswerChanged('3')">
+              <label for="question-3-3">I'm just looking <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox">
+              <input type="radio" value="Other" name="question-3" id="question-3-4" onclick="mcAnswerChanged('3')">
+              <label for="question-3-4">Other <span class="cn" style="display: none;"></span></label></div>
+              <input type="text" value="" name="question-3-other" id="question-3-4-other" placeholder="Please specify.">
+          </div>
+        </div>
+        
+      </div>
+     
       <div
         style="background-image:url(assets/images/gradient_white.png);background-repeat:repeat-x;position:absolute;bottom:40px;left:0px;width:100%;height:50px;z-index:20;">
       </div>
+      <!-- Disclaimer Section -->
       <div class="form-disclaimer">
         <div class="brokerage-disclaimer"></div>
+        {{signinForm.valid}}
 
-        By signing in, you are agreeing to <span (click)="openURL('https://www/terms/?s=soh')"><u>Terms</u></span> and
-        <span (click)="openURL('https://www./privacy/?s=soh')"><u>Privacy</u></span>. <span id="sms-disclaimer"
+        By signing in, you are agreeing to <span (click)="openURL('https://www')"><u>Terms</u></span> and <span
+          (click)="openURL('https://www.spac.io/privacy/?s=soh')"><u>Privacy</u></span>. <span id="sms-disclaimer"
           style="display:none;"><br>Regular message and data rates may apply, reply STOP to opt out.</span>
       </div>
     </form>
   </div>
-</div>
 
 
-<div class="signin-right-panel" style="color:black;overflow:hidden;background:white;">
-    <form id="propertyReg_Form" autocomplete="off" style="font-size: 16px;">
+ 
+    
+   
+ 
+     
+      
+    
 
-        <div class="form-title-section">
-            <span class="signin-title" style="font-family: proxima_nova_light; color: rgb(43, 43, 43);">PLEASE SIGN IN <span class="cn" style="display: none;">/ 请登录​</span></span>
-            <input type="button" value="SUBMIT" class="signin-button pulse-5s" (click)="regForProperty()" style="font-family: proxima_nova_light; background-color: rgb(43, 43, 43);">
-        </div>
-        <div id="reg-form-scroll" class="signin-form-content">
-            <input type="hidden" name="fn" value="addRegularRegistrant">
-            <input type="hidden" name="propertyID" value="630628">
-            <input type="hidden" name="pid" value="63028ca059e220348071ab48">
-            <input type="hidden" name="isBroker" value="NO">
-            <input type="hidden" name="leadType" value="oh">
-
-            <div class="visitor-info-input-row">
-              <div class="input-label">NAME <span class="cn" style="display: none;"></span></div>
-              <input type="text" name="name" value="" id="reg-name" placeholder="Full Name" style="text-transform: capitalize;">
-            </div>
-            <div class="visitor-info-input-row">
-              <div class="input-label">EMAIL <span class="cn" style="display: none;">​</span><span class="email-mandatory" style="display: none;"> *</span></div>
-              <input type="email" name="email" value="" id="reg-email" placeholder="Email">
-            </div>
-            <div class="visitor-info-input-row">
-              <div class="input-label">PHONE <span class="cn" style="display: none;">​​</span><span class="phone-mandatory" style="display: none;"> *</span></div>
-              <input type="tel" name="phone" value="" id="reg-phone" placeholder="Phone">
-
-            </div>
-            <div class="visitor-info-input-row brokers-signin" style="display: none;">
-              <div class="input-label">COMPANY <span class="cn" style="display: none;"></span></div>
-              <input type="text" name="company" value="" id="reg-company" placeholder="Company">
-            </div>
-
-            <div class="form-questions"><div class="form-question-row eq1-master"><div class="question">Are you working with an agent?<span class="cn" id="cn-0" style="display: none;"> / 您有否地产经纪代理?</span></div><div class="half-width-checkboxes"><div class="checkbox"><input id="question-0-yes" type="radio" value="YES" name="question-0"><label for="question-0-yes" (click)="showEQ(1)">Yes <span class="cn" style="display: none;"> / 是</span></label></div><div class="checkbox"><input id="question-0-no" type="radio" value="NO" name="question-0"><label for="question-0-no" (click)="hideEQ(1)">No <span class="cn" style="display: none;">/ 否</span></label></div></div></div><div class="form-question-row eq1-slave" style="display: none;"><div class="question">Agent Name?<span class="cn" style="display: none;"><br>地产经纪名字?</span></div><input name="question-0a" type="text" value="" placeholder="Agent Name" autocapitalize="word" style="text-transform: capitalize;"></div><div class="form-question-row eq1-slave" style="display: none;"><div class="question">Agent Contact?<span class="cn" style="display: none;"><br>地产经纪电子邮件?</span></div><input name="question-0b" type="text" value="" placeholder="Agent Email or Phone"></div><div class="form-question-row eq1-slave" style="display: none;"><div class="question">Agent Company?<span class="cn" style="display: none;"><br>地产经纪公司?</span></div><input name="question-0c" type="text" value="" placeholder="Agent Company" style="text-transform: capitalize;"></div><div class="form-question-row"><div class="question">Do you currently rent or own?<span class="cn" id="cn-1" style="display: none;"> / 您現在住的是?</span></div><div class="full-width-checkboxes" id="answers-section-1"><div class="checkbox"><input type="radio" value="Own" name="question-1" id="question-1-0" (click)="mcAnswerChanged('1')"><label for="question-1-0">Own <span class="cn" style="display: none;">/ undefined</span></label></div><div class="checkbox"><input type="radio" value="Rent" name="question-1" id="question-1-1" (click)="mcAnswerChanged('1')"><label for="question-1-1">Rent <span class="cn" style="display: none;">/ undefined</span></label></div></div></div><div class="form-question-row"><div class="question">Are you looking to buy or sell?<span class="cn" id="cn-2" style="display: none;"> / 您是否考慮買賣房屋?</span></div><div class="full-width-checkboxes" id="answers-section-2"><div class="checkbox"><input type="radio" value="Sell" name="question-2" id="question-2-0" (click)="mcAnswerChanged('2')"><label for="question-2-0">Sell <span class="cn" style="display: none;">/ undefined</span></label></div><div class="checkbox"><input type="radio" value="Buy" name="question-2" id="question-2-1" (click)="mcAnswerChanged('2')"><label for="question-2-1">Buy <span class="cn" style="display: none;">/ undefined</span></label></div></div></div><div class="form-question-row"><div class="question">How did you hear about this open house?<span class="cn" id="cn-3" style="display: none;"> / 您是如何听说到我们的</span></div><div class="full-width-checkboxes" id="answers-section-3"><div class="checkbox"><input type="radio" value="Zillow" name="question-3" id="question-3-0" (click)="mcAnswerChanged('3')"><label for="question-3-0">Zillow <span class="cn" style="display: none;">/ undefined</span></label></div><div class="checkbox"><input type="radio" value="Trulia" name="question-3" id="question-3-1" (click)="mcAnswerChanged('3')"><label for="question-3-1">Trulia <span class="cn" style="display: none;">/ undefined</span></label></div><div class="checkbox"><input type="radio" value="Social Media" name="question-3" id="question-3-2" (click)="mcAnswerChanged('3')"><label for="question-3-2">Social Media <span class="cn" style="display: none;">/ undefined</span></label></div><div class="checkbox"><input type="radio" value="Signage" name="question-3" id="question-3-3" (click)="mcAnswerChanged('3')"><label for="question-3-3">Signage <span class="cn" style="display: none;">/ undefined</span></label></div><div class="checkbox"><input type="radio" value="Neighbors" name="question-3" id="question-3-4" (click)="mcAnswerChanged('3')"><label for="question-3-4">Neighbors <span class="cn" style="display: none;">/ undefined</span></label></div><div class="checkbox"><input type="radio" value="Other" name="question-3" id="question-3-5" (click)="mcAnswerChanged('3')"><label for="question-3-5">Other <span class="cn" style="display: none;">/ undefined</span></label></div><input type="text" value="" name="question-3-other" id="question-3-5-other" placeholder="Please specify."></div></div><div class="form-question-row"><div class="question">How did you hear about this open house?<span class="cn" id="cn-4" style="display: none;"> / 您是如何听说到我们的</span></div><input name="question-4" type="text" value="" placeholder="Answer"></div><div class="form-question-row"><div class="question">Cash or Financing?<span class="cn" id="cn-5" style="display: none;"> / 您准备用现金购买还是贷款?</span></div><div class="full-width-checkboxes" id="answers-section-5"><div class="checkbox"><input type="radio" value="Cash" name="question-5" id="question-5-0" (click)="mcAnswerChanged('5')"><label for="question-5-0">Cash <span class="cn" style="display: none;">/ undefined</span></label></div><div class="checkbox"><input type="radio" value="Financing" name="question-5" id="question-5-1" (click)="mcAnswerChanged('5')"><label for="question-5-1">Financing <span class="cn" style="display: none;">/ undefined</span></label></div></div></div></div>
-
-            <div class="extra-permission-row" style="display:none;">
-               <div class="form-question-row">
-                   <input type="checkbox" value="YES" name="realscout" id="realscout-yes" unchecked=""><label for="realscout-yes" style="font-family:open_sanssemibold;color:black;">Send me more information on similar properties.</label>
-               </div>
-            </div>
-            <div class="cloudcma extra-permission-row" style="display: none;">
-                <div class="form-question-row">
-                   <input type="checkbox" value="YES" name="cloudcma" id="cloudcma-yes" unchecked=""><label for="cloudcma-yes" style="font-family:open_sanssemibold;color:black;">Send me a Property Report of this open house to get more information on this listing.</label>
-               </div>
-
-            </div>
-            <div class="moxipresent extra-permission-row" style="display: none;">
-               <div class="form-question-row">
-                   <input type="checkbox" value="YES" name="moxipresent" id="moxipresent-yes" unchecked=""><label for="moxipresent-yes" style="font-family:open_sanssemibold;color:black;">Send me a digital presentation of this open house to get more information on this listing.</label>
-               </div>
-            </div>
-            <div class="touchcma extra-permission-row" style="display: none;">
-               <div class="form-question-row">
-                   <input type="checkbox" value="YES" name="touchcma" id="touchcma-yes" unchecked=""><label for="touchcma-yes" style="font-family:open_sanssemibold;color:black;">Send me a digital presentation of this open house to get more information on this listing.</label>
-               </div>
-            </div>
-
-            <div class="homekeepr extra-permission-row" style="display: none;">
-               <div class="form-question-row">
-                   <input type="checkbox" value="YES" name="homekeepr" id="homekeepr-yes" unchecked=""><label for="homekeepr-yes" style="font-family:open_sanssemibold;color:black;">Send me a free home maintenance app with a list of your favorite local home service pros.</label>
-               </div>
-            </div>
-
-    </div>
-        <div style="background-image:url(assets/images/gradient_white.png);background-repeat:repeat-x;position:absolute;bottom:40px;left:0px;width:100%;height:50px;z-index:20;"></div>
-        <div class="form-disclaimer">
-            <div class="brokerage-disclaimer"></div>
-
-            By signing in, you are agreeing to  <span (click)="openURL('https://www')"><u>Terms</u></span> and <span (click)="openURL('https://www.spac.io/privacy/?s=soh')"><u>Privacy</u></span>. <span id="sms-disclaimer" style="display:none;"><br>Regular message and data rates may apply, reply STOP to opt out.</span>
-        </div>
-    </form>
-</div>
-
-
+<!--    
+      <div class="form-question-row">
+        <input type="checkbox" value="YES" name="realscout" id="realscout-yes" unchecked=""><label for="realscout-yes"
+          style="font-family:open_sanssemibold;color:black;">Send me more information on similar properties.</label>
+      </div>
+   -->

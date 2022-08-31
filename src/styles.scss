@@ -1,4 +1,5 @@
 @import url('assets/signin-form.scss');
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 
 /* Reset default browser CSS.
@@ -2700,7 +2701,7 @@ font-size:16px;
 }
 
 #propertyReg_Form .visitor-info-input-row .input-label{
-flex-basis: 300px;
+flex-basis: 150px;
 
 }
 

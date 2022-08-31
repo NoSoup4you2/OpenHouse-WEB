@@ -18,19 +18,35 @@ export class VisitorSignInComponent implements OnInit {
     img = 'https://listing-images.homespotter.com/145/l2x/369132/369132383-1.jpg'
     myAvatar = avatar;
     showAgentQuestion: boolean = false;
+    showFoundHowQuestion: boolean = false;
+    showpreaproved: boolean = false;
+    showmoveother : boolean = false;
 
-    signinForm!: FormGroup;
+    signinForm: FormGroup;
 
     constructor() {
       this.signinForm = new FormGroup({
-        name: new FormControl('', Validators.required),
+        firstname: new FormControl('', Validators.required),
+        lastname: new FormControl('', Validators.required),
         email: new FormControl('', Validators.required),
         phone: new FormControl('', Validators.required),
+        propertyID: new FormControl('', Validators.required),
         workingAgentYN: new FormControl('', Validators.required),
         workingAgentName:new FormControl('', Validators.required),
         workingAgentPhone:new FormControl('', Validators.required),
         workingAgentEmail:new FormControl('', Validators.required),
         workingAgentCompany:new FormControl('', Validators.required),
+        buyer:new FormControl('', Validators.required),
+        seller :new FormControl('', Validators.required),
+        rentorown: new FormControl('', Validators.required),
+        foundvia: new FormControl('', Validators.required),
+        foundviatext: new FormControl('', Validators.required),
+        cashorfinance: new FormControl('', Validators.required),
+        preaproved: new FormControl('', Validators.required),
+        preaprovedamount: new FormControl('', Validators.required),
+        movetimeframe: new FormControl('', Validators.required),
+        movetimeother: new FormControl('', Validators.required),
+        transmotivations: new FormControl('', Validators.required)
       });
     }
 
@@ -44,12 +60,17 @@ export class VisitorSignInComponent implements OnInit {
 
     regForProperty(event?: any){
       console.log('This is a submit Request')
-      console.log(event);
+      console.log(event.value);
     }
 
-    showEQ(key:any ){
+    showAgentInfo(answer : boolean){
       console.log('We have a selection to show')
-      this.showAgentQuestion = true;
+      if(answer === true) {
+        this.showAgentQuestion = true;
+      } else {
+        this.showAgentQuestion = false;
+
+      }
     }
 
     hideEQ(key:any ){
@@ -57,9 +78,21 @@ export class VisitorSignInComponent implements OnInit {
       this.showAgentQuestion = false;
     }
 
-    mcAnswerChanged(event: any) {
+    mcAnswerChanged(event: boolean){
+      this.showFoundHowQuestion = event
       console.log(event);
     }
+
+    ppAnswerChanged(event: boolean) {
+      console.log("Value changed to : " + event);
+      this.showpreaproved = event
+
+    }
+    showMoveChanged(event: boolean) {
+      this.showmoveother = event
+
+    }
+
     openURL(url: string){
       console.log('Open Web Page : ' + url)
     }
