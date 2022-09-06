@@ -13,6 +13,7 @@ export class DynamicFormQuestionComponent {
   @Input() question!: QuestionBase<string>;
   @Input() form!: FormGroup;
   radioFunction: Function;
+  optionFunction: Function;
   hideAgent: boolean = false
   sampleHide: string = "radioTest"
 
@@ -21,6 +22,7 @@ export class DynamicFormQuestionComponent {
 
   constructor() {
     this.radioFunction = (() => { });
+    this.optionFunction = (() => { });
   }
 
 
@@ -30,6 +32,7 @@ export class DynamicFormQuestionComponent {
     if (this.question.function && this.question.function !== "" && (this as any)[this.question.function]) {
       this.radioFunction = (this as any)[this.question.function];
     }
+
   }
 
   
@@ -40,12 +43,13 @@ export class DynamicFormQuestionComponent {
   }
 
   myFunction(e: any) {
-    console.log(e);
-    if(this.hideAgent === true){
-      this.hideAgent = false;
-    } else {
-           this.hideAgent = true;
+    console.log('The new function is : ' + e);
+    if(this.hideAgent === true) {
+      this.hideAgent = false;} else {
+        this.hideAgent = true;
       }
+    console.log('Hide Agent status: ' + this.hideAgent)
+ 
   }
 
   yourFunction(e: any) {
@@ -53,5 +57,8 @@ export class DynamicFormQuestionComponent {
     //alert('yourFunction');
   }
 
+  FunctionBuilder(func: string | undefined) {
+    return (this as any )[ func as string ].bind(this);
 }
 
+}

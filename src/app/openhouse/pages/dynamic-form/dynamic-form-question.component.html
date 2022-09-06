@@ -23,7 +23,7 @@
                         value="{{opt.value}}" 
                         [formControlName]="question.key"
                        
-                        (click) ="opt.click(opt.value)"
+                        (click) ="FunctionBuilder(opt.click)($event)"
                         >
                 <label for={{question.key}}-{{i}}>{{opt.key}}</label><br>
 
@@ -31,6 +31,7 @@
             </div>
             </div>
             </div>
+            {{hideAgent}}
         </div>
 
         

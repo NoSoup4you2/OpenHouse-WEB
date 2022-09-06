@@ -71,8 +71,8 @@ export class QuestionService {
         required: false,
         function: 'myFunction',
         options: [
-          {key: 'Yes',  value: 'Y' , click: ''},
-          {key: 'No',  value: 'N',  click: ''},
+          {key: 'Yes',  value: 'Y' , click: 'myFunction'},
+          {key: 'No',  value: 'N',  click: 'myFunction'},
         ],
 
       }),
