@@ -1,0 +1,71 @@
+<div [formGroup]="form">
+            <div [ngSwitch]="question.controlType">
+        
+            
+        <!-- Text Box Input -->
+        <div *ngSwitchCase="'textbox'">
+            <div *ngIf="form.value[sampleHide] ==='N'" class="visitor-info-input-row">
+                <div class="input-label">{{question.label}}</div>
+                <input type="text" [name]="question.key" value="test Value" [placeholder]="hideAgent" [formControlName]="question.key" style="text-transform: capitalize;">
+
+            </div>
+        </div>
+        <!-- Radio Button -->
+        <div *ngSwitchCase="'radiobutton'">
+            <div class="form-question-row">
+                <div class="question">{{question.label}}</div>
+            <div [class]="question.class">
+            <div *ngFor="let opt of question.options; let i = index" >
+
+                 <!-- This is the issue, trying to assign Value of the config -->
+                <input type="radio" id={{question.key}}-{{i}} 
+                        [name]="question.key" 
+                        value="{{opt.value}}" 
+                        [formControlName]="question.key"
+                       
+                        (click) ="opt.click(opt.value)"
+                        >
+                <label for={{question.key}}-{{i}}>{{opt.key}}</label><br>
+
+
+            </div>
+            </div>
+            </div>
+        </div>
+
+        
+        
+             
+        
+    
+        <!-- DropDown Input -->
+        <div *ngSwitchCase="'dropdown'">
+            <div class="form-question-row">
+                <div class="question">{{question.label}}</div>
+                <div class="form-input-row-v2">
+        <select [id]="question.key" [formControlName]="question.key">
+          <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
+        </select>
+        </div>
+        </div>
+    </div>
+
+        <!-- Checkbox Input -->
+        <div *ngSwitchCase="'checkbox'">
+            <div class="form-question-row">
+                <div class="question">{{question.label}}</div>
+        <div *ngFor="let opt of question.options; let i = index" >
+    
+        <input type="checkbox" id={{question.key}}-{{i}} [name]="question.key" value="{{opt.value}}" formControlName={{question.key}}_{{opt.key}}>
+        <label for={{question.key}}-{{i}}>{{opt.key}}</label><br>
+        </div>
+        </div>
+        </div>
+        <!-- Radio Box Input -->
+    
+      </div>
+    
+      <!-- <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div> -->
+    </div>
+
+    

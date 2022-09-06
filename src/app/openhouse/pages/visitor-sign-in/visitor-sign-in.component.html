@@ -88,7 +88,7 @@
         <div class="form-questions">
            <!-- Beginning of Agent Question -->
           <div class="form-question-row eq1-master">
-            <div class="question">Are you working with an agent?<span class="cn" id="cn-0" style="display: none;"></span></div>
+            <div class="question">Are you working with an agent?</div>
             <div class="half-width-checkboxes">
               <div class="checkbox"><input id="question-0-yes" type="radio" value="YES" name="workingAgentYN" formControlName="workingAgentYN">
                 <label for="question-0-yes" (click)="showAgentInfo(true)">Yes </label>
@@ -101,9 +101,9 @@
 
           <!-- Beginning of conditianal Agent Detail Question -->
           <div *ngIf="showAgentQuestion">
-          <div class="form-question-row eq1-slave" >
-            <div class="question">Agent Name?<span class="cn" style="display: none;"><br></span></div><input
-              name="question-0a" type="text" value="" placeholder="Agent Name" autocapitalize="word"
+          <div class="form-question-row" >
+            <div class="question">Agent Name ?</div>
+            <input  name="workingAgentName" type="text" value="" placeholder="Agent Name" autocapitalize="word"
               style="text-transform: capitalize;" formControlName="workingAgentName">
           </div>
           <div class="form-question-row eq1-slave" >
@@ -135,23 +135,27 @@
         <!-- End of conditianal Agent  Question -->
 
         <div class="form-question-row">
-          <div class="question">Are you looking to buy or sell?<span class="cn" id="cn-2" style="display: none;"></span></div>
-          <div class="half-width-checkboxes" id="answers-section-2">
-            <div class="checkbox"><input type="checkbox" value="Sell" name="seller" id="question-2-0" formControlName="seller"
-                ><label for="question-2-0">Sell <span class="cn" style="display: none;"></span></label></div>
-            <div class="checkbox"><input type="checkbox" value="Buy" name="buyer" id="question-2-1" formControlName="buyer"
-                ><label for="question-2-1">Buy <span class="cn" style="display: none;" formControlName="seller"></span></label></div>
+          <div class="question">Are you looking to buy or sell?</div>
+          <div class="half-width-checkboxes">
+            <div class="checkbox"><input type="checkbox" value="Sell" name="buyorsell" id="buyorsell-0" formControlName="buyorsell" (click)="regForProperty(signinForm)" >  
+                <label for="buyorsell-0">Sell </label></div>
+            <div class="checkbox"><input type="checkbox" value="Buy" name="buyorsell"  id="buyorsell-1"formControlName="buyorsell" (click)="regForProperty(signinForm)" >  
+                <label for="buyorsell-1">Buy</label></div>
           </div>
         </div>
 
         <!-- Beginning of Rent or Own -->
         <div class="form-question-row">
-          <div class="question">Do you currently rent or own?<span class="cn" id="cn-1" style="display: none;"></span></div>
+          <div class="question">Do you currently rent or own?</div>
           <div class="half-width-checkboxes" id="answers-section-1">
-            <div class="checkbox"><input type="radio" value="Own" name="rentorown" id="question-1-0" formControlName="rentorown"
-              ><label for="question-1-0">Own <span class="cn" style="display: none;"></span></label></div>
-            <div class="checkbox"><input type="radio" value="Rent" name="rentorown" id="question-1-1" formControlName="rentorown"
-                ><label for="question-1-1">Rent <span class="cn" style="display: none;"></span></label></div>
+            <div class="checkbox">
+              <input type="radio" value="Own" name="rentorown" id="rentorown-own" formControlName="rentorown">
+              <label for="rentorown-own">Own </label>
+            </div>
+            <div class="checkbox">
+              <input type="radio" value="Rent" name="rentorown" id="rentorown-rent" formControlName="rentorown">
+              <label for="rentorown-rent">Rent </label>
+            </div>
           </div>
         </div>
 

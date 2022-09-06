@@ -1,0 +1,19 @@
+<h1>Dynamic Form</h1><BR>
+
+     <!-- First Name Input -->
+     <!-- <div class="visitor-info-input-row">
+        <div class="input-label">FIRST NAME</div>
+        <input type="text" name="name" value="" placeholder="First Name" formControlName="firstname" style="text-transform: capitalize;">
+      </div> -->
+       <!-- Last Name Input -->
+       <!-- <div class="visitor-info-input-row">
+        <div class="input-label">LAST NAME <span class="cn" style="display: none;"></span></div>
+        <input type="text" name="name" value="" id="reg-name" placeholder="Last Name" formControlName="lastname"
+          style="text-transform: capitalize;">
+      </div> -->
+
+      
+        
+        <app-dynamic-base [questions]="questions$ | async"></app-dynamic-base>
+
+    

@@ -7,6 +7,11 @@ const routes: Routes = [
     data: { displayName: 'SignIn' },
     loadChildren: () => import('./openhouse/pages/visitor-sign-in/visitor-sign-in.module').then(m => m.VisitorSignInModule)
   },
+  {
+    path: 'DynamicForm',
+    data: { displayName: 'Dynamic Form' },
+    loadChildren: () => import('./openhouse/pages/dynamic-form/dynamic-form.module').then(m => m.DynamicFormModule)
+  },
 ];
 
 @NgModule({

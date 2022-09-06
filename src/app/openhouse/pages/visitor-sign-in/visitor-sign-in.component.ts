@@ -21,6 +21,7 @@ export class VisitorSignInComponent implements OnInit {
     showFoundHowQuestion: boolean = false;
     showpreaproved: boolean = false;
     showmoveother : boolean = false;
+    sampleCode ='<div class="question">Are you looking to buy or sell?<span class="cn" id="cn-2" style="display: none;"></span></div><div class="half-width-checkboxes" id="answers-section-2"><div class="checkbox"><input type="checkbox" value="Sell" name="seller" id="question-2-0" formControlName="seller"><label for="question-2-0">Sell <span class="cn" style="display: none;"></span></label></div><div class="checkbox"><input type="checkbox" value="Buy" name="buyer" id="question-2-1" formControlName="buyer"><label for="question-2-1">Buy <span class="cn" style="display: none;" formControlName="seller"></span></label></div></div>'
 
     signinForm: FormGroup;
 
@@ -36,7 +37,7 @@ export class VisitorSignInComponent implements OnInit {
         workingAgentPhone:new FormControl('', Validators.required),
         workingAgentEmail:new FormControl('', Validators.required),
         workingAgentCompany:new FormControl('', Validators.required),
-        buyer:new FormControl('', Validators.required),
+        buyorsell:new FormControl('', Validators.required),
         seller :new FormControl('', Validators.required),
         rentorown: new FormControl('', Validators.required),
         foundvia: new FormControl('', Validators.required),
